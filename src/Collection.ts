@@ -234,6 +234,7 @@ export class Collection<T extends object> {
    * Delete a document
    *
    * TODO Expand to allow deleting multiple documents with `query` and not
+   Issue URL: https://github.com/battis/lazy-firestorm/issues/1
    *   `strict`
    *
    * @param strict defaults to `true`
