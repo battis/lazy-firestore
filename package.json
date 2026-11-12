@@ -1,0 +1,59 @@
+{
+  "name": "@battis/lazy-firestore",
+  "version": "0.0.0",
+  "description": "Atomic CRUDL convenience wrapper for working with Firestore",
+  "keywords": [
+    "firestore",
+    "crudl",
+    "crud"
+  ],
+  "homepage": "https://github.com/battis/lazy-firestore#readme",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/battis/lazy-firestore.git"
+  },
+  "license": "GPL-3.0",
+  "author": {
+    "name": "Seth Battis",
+    "url": "https://github.com/battis"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js",
+    "./converters/Date": "./dist/Converters/Date.js",
+    "./converters/URL": "./dist/Converters/URL.js",
+    "./directives/requireUnique": "./dist/Directives/requireUnique.js"
+  },
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "run-s build:*",
+    "build:clean": "del ./dist",
+    "build:compile": "tsc",
+    "start": "echo 'noop'",
+    "prepack": "run-s build",
+    "release": "run-all release:*",
+    "release:changelog": "commit-and-tag-version --noBumpWhenEmptyChanges",
+    "release:git": "git push --follow-tags",
+    "release:login": "pnpm login",
+    "release:publish": "pnpm publish --access public"
+  },
+  "dependencies": {
+    "@battis/descriptive-types": "^0",
+    "@battis/typescript-tricks": "^0"
+  },
+  "devDependencies": {
+    "@battis/commit": "^0.0.11",
+    "@battis/eslint": "^3.0.8",
+    "@battis/prettier": "^2.0.11",
+    "@battis/workspace": "^0",
+    "@tsconfig/node-lts": "^24",
+    "@types/node": "^24",
+    "del-cli": "^8",
+    "npm-run-all": "^4",
+    "typescript": "^7"
+  },
+  "peerDependencies": {
+    "@google-cloud/firestore": "^9"
+  },
+  "packageManager": "pnpm@12.18.0+sha512.9d7882d5dc82147ecfc4e062aa34834e0ad0296710a1837a1115ae012127d36b7109e321ac1598a1dd0a65597681b1e99917e12ed0d749eae91187943363beb3"
+}
