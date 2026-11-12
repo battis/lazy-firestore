@@ -31,7 +31,7 @@
     "build:compile": "tsc",
     "start": "echo 'noop'",
     "prepack": "run-s build",
-    "release": "run-all release:*",
+    "release": "run-s release:*",
     "release:changelog": "commit-and-tag-version --noBumpWhenEmptyChanges",
     "release:git": "git push --follow-tags",
     "release:login": "pnpm login",
