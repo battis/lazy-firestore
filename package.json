@@ -19,12 +19,20 @@
   },
   "type": "module",
   "exports": {
-    ".": "./dist/index.js",
-    "./converters/Date": "./dist/Converters/Date.js",
-    "./converters/URL": "./dist/Converters/URL.js",
-    "./directives/requireUnique": "./dist/Directives/requireUnique.js"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./converters/*": {
+      "types": "./dist/Converters/*.d.ts",
+      "import": "./dist/Converters/*.js"
+    },
+    "./directives/*": {
+      "types": "./dist/Directives/*.d.ts",
+      "import": "./dist/Directives/*.js"
+    },
+    "./package.json": "./package.json"
   },
-  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "run-s build:*",
     "build:clean": "del ./dist",
