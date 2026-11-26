@@ -42,26 +42,27 @@
     "release": "run-s release:*",
     "release:changelog": "commit-and-tag-version --noBumpWhenEmptyChanges",
     "release:git": "git push --follow-tags",
-    "release:login": "pnpm login",
+    "release:login": "require-pnpm-auth battis",
     "release:publish": "pnpm publish --access public"
   },
   "dependencies": {
-    "@battis/descriptive-types": "^0",
-    "@battis/typescript-tricks": "^0"
+    "@battis/descriptive-types": "^0.3.2",
+    "@battis/typescript-tricks": "^0.8.7"
   },
   "devDependencies": {
     "@battis/commit": "^0.0.11",
-    "@battis/eslint": "^3.0.8",
+    "@battis/eslint": "^3.0.9",
+    "@battis/monorepo": "^1.1.0",
     "@battis/prettier": "^2.0.11",
-    "@battis/workspace": "^0",
-    "@tsconfig/node-lts": "^24",
-    "@types/node": "^24",
-    "del-cli": "^8",
-    "npm-run-all": "^4",
-    "typescript": "^7"
+    "@battis/workspace": "^0.0.13",
+    "@tsconfig/node-lts": "^24.0.1",
+    "@types/node": "^24.19.4",
+    "del-cli": "^8.0.1",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^7.0.2"
   },
   "peerDependencies": {
-    "@google-cloud/firestore": "^9"
+    "@google-cloud/firestore": "9.x"
   },
   "packageManager": "pnpm@12.18.0+sha512.9d7882d5dc82147ecfc4e062aa34834e0ad0296710a1837a1115ae012127d36b7109e321ac1598a1dd0a65597681b1e99917e12ed0d749eae91187943363beb3"
 }
