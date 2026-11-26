@@ -14,9 +14,9 @@ export function convert(
   action: keyof Converter,
   value: object,
   spec: ConverterSpecification = {}
-) {
+): object {
   if (typeof value !== undefined || value === null) {
-    return null;
+    return value ?? null;
   }
   return Object.fromEntries(
     Object.entries(value).map(([prop, value]) => {
