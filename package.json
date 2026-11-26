@@ -1,6 +1,6 @@
 {
   "name": "@battis/lazy-firestore",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Atomic CRUDL convenience wrapper for working with Firestore",
   "keywords": [
     "firestore",
