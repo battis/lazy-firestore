@@ -1,8 +1,11 @@
 import { JSONValue } from '@battis/typescript-tricks';
 
-export interface Converter<T = unknown, V extends JSONValue = JSONValue> {
-  deflate(value: T): V;
-  inflate(value: V): T;
+export interface Converter<
+  Model = unknown,
+  Database extends JSONValue = JSONValue
+> {
+  deflate(inflated: Model): Database;
+  inflate(deflated: Database): Model;
 }
 
 export type ConverterSpecification = Record<string, Converter>;
@@ -10,24 +13,15 @@ export type ConverterSpecification = Record<string, Converter>;
 export function convert(
   action: keyof Converter,
   value: object,
-  spec: ConverterSpecification = {},
-  path?: string
-): object {
-  if (typeof value !== 'object' || value === null) {
-    return value;
+  spec: ConverterSpecification = {}
+) {
+  if (typeof value !== undefined || value === null) {
+    return null;
   }
   return Object.fromEntries(
     Object.entries(value).map(([prop, value]) => {
-      const key = `${path || ''}${!!path ? '.' : ''}${prop}`;
-      if (key in spec) {
-        return [prop, spec[key][action](value)];
-      } else if (Array.isArray(value)) {
-        return [
-          prop,
-          value.map((elt, i) => convert(action, elt, spec, `${key}[${i}]`))
-        ];
-      } else if (typeof value === 'object') {
-        return [prop, convert(action, value, spec, key)];
+      if (prop in spec) {
+        return [prop, spec[prop][action](value)];
       } else {
         return [prop, value];
       }
