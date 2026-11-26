@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.2.1](https://github.com/battis/lazy-firestore/compare/v1.2.0...v1.2.1) (2026-11-26)
+
+### Bug Fixes
+
+* make optional parameters optional ([7fd28df](https://github.com/battis/lazy-firestore/commit/7fd28df206bf139e8c0b10f67ab6666631754c02))
 ## [1.2.0](https://github.com/battis/lazy-firestore/compare/v1.1.1...v1.2.0) (2026-11-26)
 
 ### Features
