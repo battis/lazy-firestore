@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.2.3](https://github.com/battis/lazy-firestore/compare/v1.2.2...v1.2.3) (2026-11-26)
+
+### Bug Fixes
+
+* internal converter typing ([3ea4652](https://github.com/battis/lazy-firestore/commit/3ea4652644082b0c0b37d75d36af6dbda8dba5a0))
 ## [1.2.2](https://github.com/battis/lazy-firestore/compare/v1.2.1...v1.2.2) (2026-11-26)
 
 ### Bug Fixes
