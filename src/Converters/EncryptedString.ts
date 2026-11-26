@@ -4,8 +4,8 @@ import { Converter } from './index.js';
 interface Options {
   password: crypto.BinaryLike;
   salt: crypto.BinaryLike;
-  algorithm: crypto.CipherGCMTypes;
-  encoding: BufferEncoding;
+  algorithm?: crypto.CipherGCMTypes;
+  encoding?: BufferEncoding;
 }
 
 type Wrapper = {
